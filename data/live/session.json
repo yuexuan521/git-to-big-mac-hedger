@@ -1,0 +1,115 @@
+{
+  "session": {
+    "startedAt": "2026-10-17T20:25:39+08:00",
+    "client": "workbuddy-agent",
+    "transport": "mcp (host-native tools)",
+    "server": "mcd-mcp",
+    "note": "本文件记录本轮真实发生的 MCP 工具调用。traceId 为服务端返回的真实值，可用于对账。"
+  },
+  "calls": [
+    {
+      "step": 1,
+      "tool": "list-nutrition-foods",
+      "arguments": {},
+      "traceId": "385b79152e676de3a5c2230ec6c4a835",
+      "datetime": "2026-10-17 20:25:39",
+      "summary": "返回 160 项餐品营养数据（productName / energyKj / energyKcal / protein / fat / carbohydrate / sodium / calcium）。本项目取其中与菜单相关的 41 项。"
+    },
+    {
+      "step": 2,
+      "tool": "available-coupons",
+      "arguments": {},
+      "traceId": "n/a（该工具返回结构化列表，未带 traceId）",
+      "datetime": "2026-10-17 20:25:48",
+      "summary": "返回 4 张可领取的麦麦省优惠券：巧克力味厚松饼猪柳蛋套餐、免费脆薯饼、人气麦旋风买一送一、9.9 元中杯冰美式。券不含 SKU 与价格，无法直接换算热量。"
+    },
+    {
+      "step": 3,
+      "tool": "query-nearby-stores",
+      "arguments": { "city": "上海", "keyword": "漕河泾", "beType": 1, "searchType": 2 },
+      "traceId": "9086671a26395325140bcc34e4d64ef1",
+      "datetime": "2026-10-17 20:25:48",
+      "summary": "返回 5 家门店，最近为 1450750（麦当劳上海徐汇宜山路长兴园餐厅，444 m，营业中）。选定该店作为后续查询门店。"
+    },
+    {
+      "step": 4,
+      "tool": "query-my-coupons",
+      "arguments": {},
+      "traceId": "n/a（该工具返回文本列表，未带 traceId）",
+      "datetime": "2026-10-17 20:25:49",
+      "summary": "用户卡包为空，返回「暂无可用优惠券」。因此本次不叠加个人券，优惠以菜单价 currentPrice 为准。"
+    },
+    {
+      "step": 5,
+      "tool": "query-meals",
+      "arguments": { "storeCode": "1450750", "orderType": 1, "beType": 1 },
+      "traceId": "bff0f0536c1c05825a76a6a38c406e02",
+      "datetime": "2026-10-17 20:25:52",
+      "summary": "返回 5 个分类下共 49 个餐品（combo 8 / burger / side / drink / dessert），含 name / currentPrice / originalPrice。套餐的划线价与现价差异即折扣来源。"
+    },
+    {
+      "step": 6,
+      "tool": "query-meal-detail",
+      "arguments": { "storeCode": "1450750", "orderType": 1, "beType": 1, "code": "9900005466" },
+      "traceId": "cd46fd71be9d2ba475e3e51bd159959f",
+      "datetime": "2026-10-17 20:26:02",
+      "summary": "巨无霸三件套 → 默认选配：巨无霸 ×1 + 中薯条 ×1 + 可乐中杯 ×1。"
+    },
+    {
+      "step": 7,
+      "tool": "query-meal-detail",
+      "arguments": { "storeCode": "1450750", "orderType": 1, "beType": 1, "code": "9900015602" },
+      "traceId": "d4c326a8fda210d4edbf68e4fb4f4b4b",
+      "datetime": "2026-10-17 20:26:26",
+      "summary": "大堡口福三件套 → Hold不住鸡排堡（椒盐风味）×1 + 中薯条 ×1 + 可乐中杯 ×1。该堡不在营养表中，热量无法核算，被排除。"
+    },
+    {
+      "step": 8,
+      "tool": "query-meal-detail",
+      "arguments": { "storeCode": "1450750", "orderType": 1, "beType": 1, "code": "9900004835" },
+      "traceId": "a049d4849d998c4aa64cc584b232d2ba",
+      "datetime": "2026-10-17 20:26:26",
+      "summary": "麦乐鸡经典中套餐 → 麦乐鸡5块 ×1 + 中薯条 ×1 + 可乐中杯 ×1 = 649 kcal。"
+    },
+    {
+      "step": 9,
+      "tool": "query-meal-detail",
+      "arguments": { "storeCode": "1450750", "orderType": 1, "beType": 1, "code": "9900005462" },
+      "traceId": "3f600611b22b7086fad7ee09d642213d",
+      "datetime": "2026-10-17 20:26:32",
+      "summary": "板烧鸡腿堡三件套 → 板烧鸡腿堡 ×1 + 中薯条 ×1 + 可乐中杯 ×1 = 827 kcal。"
+    },
+    {
+      "step": 10,
+      "tool": "query-meal-detail",
+      "arguments": { "storeCode": "1450750", "orderType": 1, "beType": 1, "code": "9900011056" },
+      "traceId": "d147cbcb504d9c707e98c63c104363f6",
+      "datetime": "2026-10-17 20:26:32",
+      "summary": "全明星双人分享餐八件套 → 麦辣鸡腿汉堡 + 板烧鸡腿堡 + 麦乐鸡4块 + 麦辣鸡翅2块 + 中薯条×2 + 可乐中杯×2 = 2142 kcal，超出 L4 的 2000 kcal 上限。"
+    },
+    {
+      "step": 11,
+      "tool": "query-meal-detail",
+      "arguments": { "storeCode": "1450750", "orderType": 1, "beType": 1, "code": "9900005456" },
+      "traceId": "5129a077857006bff60f5216b6a2b010",
+      "datetime": null,
+      "summary": "麦辣鸡腿汉堡三件套 → 麦辣鸡腿汉堡 ×1 + 中薯条 ×1 + 可乐中杯 ×1 = 921 kcal。补抓后 L3 首次出现比巨无霸更划算的候选。（服务端时间未单独留存，以 traceId 对账）"
+    },
+    {
+      "step": 12,
+      "tool": "query-meal-detail",
+      "arguments": { "storeCode": "1450750", "orderType": 1, "beType": 1, "code": "9900005464" },
+      "traceId": "22f01d7ee4e9fed3dcecad38b824603d",
+      "datetime": null,
+      "summary": "双层吉士汉堡套餐 → 双层吉士汉堡 ×1 + 中薯条 ×1 + 可乐中杯 ×1 = 865 kcal。（服务端时间未单独留存，以 traceId 对账）"
+    },
+    {
+      "step": 13,
+      "tool": "query-meal-detail",
+      "arguments": { "storeCode": "1450750", "orderType": 1, "beType": 1, "code": "9900005460" },
+      "traceId": "353f8cedbfc117bf06712bc181dffe08",
+      "datetime": "2026-10-17 20:31:15",
+      "summary": "麦香鱼中套餐 → 麦香鱼 ×1 + 中薯条 ×1 + 可乐中杯 ×1 = 761 kcal。该套餐成为 L2 的「差一点点」提示项（超出 700 额度 61 kcal）。"
+    }
+  ]
+}

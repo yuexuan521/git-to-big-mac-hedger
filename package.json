@@ -1,0 +1,30 @@
+{
+  "name": "git-mcd-hedger",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Git 提交与巨无霸热量对冲器 —— 把今天写下的每一行代码，兑换成一顿刚刚好的麦当劳",
+  "keywords": ["mcp", "mcd-mcp", "git", "calorie", "mcdonald", "hackathon"],
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.17"
+  },
+  "bin": {
+    "hedger": "./index.js"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "demo": "node index.js --demo",
+    "demo:l1": "node index.js --demo l1",
+    "demo:l2": "node index.js --demo l2",
+    "demo:l3": "node index.js --demo l3",
+    "demo:l4": "node index.js --demo l4",
+    "demo:all": "node index.js --demo all",
+    "unlimited": "node index.js --demo all --unlimited",
+    "record": "node index.js --demo all --record workbuddy.md",
+    "out": "node index.js --demo all --out docs/sample-report.md",
+    "test": "node --test"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}

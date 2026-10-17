@@ -1,0 +1,20 @@
+{
+  "capturedAt": "2026-10-17T20:25:48+08:00",
+  "note": "available-coupons 返回的是「可领取」的券（标题+图片，不含券 ID 与价格）；query-my-coupons 返回用户卡包，当前为空。因为券不带 SKU 与价格，本项目不把券当作独立报价使用，而是以 query-meals 的 currentPrice/originalPrice 作为优惠依据（其中已含促销价与麦金卡价）。",
+  "available": {
+    "tool": "available-coupons",
+    "traceId": "available-coupons@2026-10-17T20:25:48+08:00",
+    "coupons": [
+      { "title": "巧克力味厚松饼猪柳蛋套餐", "status": "可领取" },
+      { "title": "免费脆薯饼", "status": "可领取" },
+      { "title": "人气麦旋风买一送一", "status": "可领取" },
+      { "title": "9.9元中杯冰美式", "status": "可领取" }
+    ]
+  },
+  "mine": {
+    "tool": "query-my-coupons",
+    "total": 0,
+    "coupons": [],
+    "raw": "暂无可用优惠券"
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "tool": "query-nearby-stores",
+  "query": { "city": "上海", "keyword": "漕河泾", "beType": 1, "searchType": 2 },
+  "capturedAt": "2026-10-17T20:25:48+08:00",
+  "traceId": "9086671a26395325140bcc34e4d64ef1",
+  "stores": [
+    {
+      "storeCode": "1450750",
+      "storeName": "麦当劳上海徐汇宜山路长兴园餐厅",
+      "address": "宜山路1397号5幢B栋111室商铺",
+      "distance": 444,
+      "businessStatus": true,
+      "hours": "07:00-22:00"
+    },
+    {
+      "storeCode": "1450249",
+      "storeName": "麦当劳上海桂箐路餐厅",
+      "address": "桂箐路65号",
+      "distance": 706,
+      "businessStatus": true,
+      "hours": "07:00-22:00"
+    },
+    {
+      "storeCode": "1450167",
+      "storeName": "麦当劳上海桂平路-漕河泾餐厅",
+      "address": "漕河泾开发区内桂平路391号1号楼114B室",
+      "distance": 863,
+      "businessStatus": false,
+      "hours": "07:00-20:00"
+    },
+    {
+      "storeCode": "1450376",
+      "storeName": "麦当劳上海漕河泾印象城餐厅",
+      "address": "漕宝路1011号漕河泾印象城B层B1-01",
+      "distance": 1041,
+      "businessStatus": true,
+      "hours": "06:30-23:00"
+    },
+    {
+      "storeCode": "1450236",
+      "storeName": "麦当劳上海合川路餐厅",
+      "address": "合川路2570号102、103、104商铺",
+      "distance": 1297,
+      "businessStatus": true,
+      "hours": "06:00-23:00"
+    }
+  ]
+}

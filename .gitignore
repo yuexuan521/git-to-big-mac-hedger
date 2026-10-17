@@ -1,0 +1,21 @@
+# 依赖
+node_modules/
+
+# 运行时产物
+*.log
+.env
+.env.*
+
+# 本地产物（demo 导出按需保留）
+docs/report-*.md
+tmp/
+
+# 协作工具的本地记忆，不入库
+.workbuddy/
+
+# 编辑器 / 系统
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp

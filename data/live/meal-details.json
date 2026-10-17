@@ -1,0 +1,84 @@
+{
+  "tool": "query-meal-detail",
+  "storeCode": "1450750",
+  "note": "只保留每轮 isDefault=1 的默认选配（下单时的默认组合）。热量由各子项回查 list-nutrition-foods 后累加，不做估算。",
+  "capturedAt": "2026-10-17T20:26:32+08:00",
+  "updatedAt": "2026-10-17T20:31:15+08:00",
+  "details": {
+    "9900005466": {
+      "name": "巨无霸三件套",
+      "traceId": "cd46fd71be9d2ba475e3e51bd159959f",
+      "defaults": [
+        { "name": "巨无霸", "qty": 1 },
+        { "name": "中薯条", "qty": 1 },
+        { "name": "可乐中杯", "qty": 1 }
+      ]
+    },
+    "9900005462": {
+      "name": "板烧鸡腿堡三件套",
+      "traceId": "3f600611b22b7086fad7ee09d642213d",
+      "defaults": [
+        { "name": "板烧鸡腿堡", "qty": 1 },
+        { "name": "中薯条", "qty": 1 },
+        { "name": "可乐中杯", "qty": 1 }
+      ]
+    },
+    "9900004835": {
+      "name": "麦乐鸡经典中套餐",
+      "traceId": "a049d4849d998c4aa64cc584b232d2ba",
+      "defaults": [
+        { "name": "麦乐鸡5块", "qty": 1 },
+        { "name": "中薯条", "qty": 1 },
+        { "name": "可乐中杯", "qty": 1 }
+      ]
+    },
+    "9900015602": {
+      "name": "大堡口福三件套",
+      "traceId": "d4c326a8fda210d4edbf68e4fb4f4b4b",
+      "defaults": [
+        { "name": "Hold不住鸡排堡（椒盐风味）", "qty": 1 },
+        { "name": "中薯条", "qty": 1 },
+        { "name": "可乐中杯", "qty": 1 }
+      ]
+    },
+    "9900011056": {
+      "name": "全明星双人分享餐八件套",
+      "traceId": "d147cbcb504d9c707e98c63c104363f6",
+      "defaults": [
+        { "name": "麦辣鸡腿汉堡", "qty": 1 },
+        { "name": "板烧鸡腿堡", "qty": 1 },
+        { "name": "麦乐鸡4块", "qty": 1 },
+        { "name": "麦辣鸡翅-2块", "qty": 1 },
+        { "name": "中薯条", "qty": 2 },
+        { "name": "可乐中杯", "qty": 2 }
+      ]
+    },
+    "9900005456": {
+      "name": "麦辣鸡腿汉堡三件套",
+      "traceId": "5129a077857006bff60f5216b6a2b010",
+      "defaults": [
+        { "name": "麦辣鸡腿汉堡", "qty": 1 },
+        { "name": "中薯条", "qty": 1 },
+        { "name": "可乐中杯", "qty": 1 }
+      ]
+    },
+    "9900005464": {
+      "name": "双层吉士汉堡套餐",
+      "traceId": "22f01d7ee4e9fed3dcecad38b824603d",
+      "defaults": [
+        { "name": "双层吉士汉堡", "qty": 1 },
+        { "name": "中薯条", "qty": 1 },
+        { "name": "可乐中杯", "qty": 1 }
+      ]
+    },
+    "9900005460": {
+      "name": "麦香鱼中套餐",
+      "traceId": "353f8cedbfc117bf06712bc181dffe08",
+      "defaults": [
+        { "name": "麦香鱼", "qty": 1 },
+        { "name": "中薯条", "qty": 1 },
+        { "name": "可乐中杯", "qty": 1 }
+      ]
+    }
+  }
+}
