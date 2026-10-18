@@ -11,6 +11,8 @@
 
 ---
 
+![](https://raw.githubusercontent.com/yuexuan521/image/main/20261018100259644.jpg)
+
 ## 一、为什么做这个
 
 程序员的一天是高度非线性的。写了 13 个 commit 的那天和写了 2 个的那天，身体感受完全不同，但日历上看起来一模一样。
