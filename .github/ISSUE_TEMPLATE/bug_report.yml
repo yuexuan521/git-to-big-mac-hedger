@@ -1,0 +1,55 @@
+name: Bug 报告
+description: 记录一个可复现的问题
+labels: ['bug']
+body:
+  - type: markdown
+    attributes:
+      value: |
+        感谢反馈。请尽量提供可复现的最小信息——这个项目的多数问题都能用「一条命令 + 一段输出」定位。
+  - type: textarea
+    id: command
+    attributes:
+      label: 复现命令
+      description: 你执行的完整命令
+      placeholder: node index.js --demo l4
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: 期望结果
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: 实际结果
+      description: 直接粘贴终端输出，不要截图
+      render: shell
+    validations:
+      required: true
+  - type: input
+    id: node
+    attributes:
+      label: Node 版本
+      placeholder: v22.22.2
+    validations:
+      required: true
+  - type: dropdown
+    id: os
+    attributes:
+      label: 操作系统
+      options:
+        - macOS
+        - Windows
+        - Linux
+        - 其他
+    validations:
+      required: true
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: 提交前确认
+      options:
+        - label: 已运行 `npm run check` 且通过
+        - label: 已确认不是 `data/live/` 快照本身的过期问题

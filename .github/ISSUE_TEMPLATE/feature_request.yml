@@ -1,0 +1,33 @@
+name: 功能建议
+description: 提出一个新的能力或改进
+labels: ['enhancement']
+body:
+  - type: textarea
+    id: scenario
+    attributes:
+      label: 使用场景
+      description: 你在什么情况下需要它？比「加一个参数」更有用的是背后的场景。
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: 你的方案
+      description: 期望的命令、输出或接口形态
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: 备选方案
+      description: 你考虑过但放弃的做法，以及放弃的原因
+  - type: dropdown
+    id: scope
+    attributes:
+      label: 影响范围
+      options:
+        - 评分与分级（会改变账单结论，需同步更新测试）
+        - 套餐匹配（会改变推荐结果）
+        - 数据源与目录（快照、别名、热量核算）
+        - 输出与导出
+        - 文档与工程配置

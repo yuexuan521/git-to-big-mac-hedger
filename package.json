@@ -1,10 +1,27 @@
 {
   "name": "git-mcd-hedger",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "private": true,
   "type": "module",
   "description": "Git 提交与巨无霸热量对冲器 —— 把今天写下的每一行代码，兑换成一顿刚刚好的麦当劳",
-  "keywords": ["mcp", "mcd-mcp", "git", "calorie", "mcdonald", "hackathon"],
+  "keywords": [
+    "mcp",
+    "mcd-mcp",
+    "git",
+    "calorie",
+    "mcdonald",
+    "cli",
+    "zero-dependency"
+  ],
+  "homepage": "https://github.com/yuexuan521/git-to-big-mac-hedger#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yuexuan521/git-to-big-mac-hedger.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yuexuan521/git-to-big-mac-hedger/issues"
+  },
+  "author": "yuexuan521",
   "license": "MIT",
   "engines": {
     "node": ">=18.17"
@@ -12,6 +29,13 @@
   "bin": {
     "hedger": "./index.js"
   },
+  "files": [
+    "index.js",
+    "src/",
+    "data/live/",
+    "LICENSE",
+    "README.md"
+  ],
   "scripts": {
     "start": "node index.js",
     "demo": "node index.js --demo",
@@ -23,7 +47,11 @@
     "unlimited": "node index.js --demo all --unlimited",
     "record": "node index.js --demo all --record workbuddy.md",
     "out": "node index.js --demo all --out docs/sample-report.md",
-    "test": "node --test"
+    "check": "node scripts/check.mjs",
+    "experiment": "node scripts/experiments.mjs",
+    "test": "node --test",
+    "test:coverage": "node --test --experimental-test-coverage --test-coverage-include=\"src/**\"",
+    "verify": "npm run check && npm test"
   },
   "dependencies": {},
   "devDependencies": {}

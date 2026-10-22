@@ -1,0 +1,59 @@
+name: CI
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    name: Node ${{ matrix.node }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        node: ['18.20', '20', '22']
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+
+      - name: Self check (syntax / JSON / docs links)
+        run: node scripts/check.mjs
+
+      - name: Unit tests
+        run: node --test
+
+      - name: Smoke test - four scenarios end to end
+        run: node index.js --demo all --json - > /tmp/hedger.json
+
+      - name: Validate JSON output shape
+        run: |
+          node -e "
+            const runs = require('/tmp/hedger.json');
+            if (runs.length !== 4) throw new Error('expected 4 scenarios, got ' + runs.length);
+            for (const run of runs) {
+              if (!run.level?.id) throw new Error('missing level');
+              if (!run.meal?.primary) throw new Error('missing recommendation for ' + run.level.id);
+              if (run.meal.primary.kcal > run.calorieMax) throw new Error('over budget: ' + run.level.id);
+            }
+            console.log('4 scenarios ok:', runs.map(r => r.level.id + '=' + r.meal.primary.name).join(', '));
+          "
+
+  coverage:
+    name: Coverage
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Coverage report (src layer)
+        run: node --test --experimental-test-coverage --test-coverage-include="src/**"

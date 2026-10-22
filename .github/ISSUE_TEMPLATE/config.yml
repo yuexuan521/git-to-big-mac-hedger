@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 使用问题与讨论
+    url: https://github.com/yuexuan521/git-to-big-mac-hedger/discussions
+    about: 不确定是不是 Bug、或者想聊聊评分口径，请走讨论区

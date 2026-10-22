@@ -18,6 +18,7 @@
  */
 
 import { writeFile, readFile } from 'node:fs/promises';
+import { createRequire } from 'node:module';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -39,6 +40,7 @@ import { renderCallLog } from './src/mcp-trace.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const LIVE_DIR = path.join(__dirname, 'data', 'live');
+const pkg = createRequire(import.meta.url)('./package.json');
 
 /* ------------------------------------------------------------------ */
 /* 参数                                                                */
@@ -57,6 +59,7 @@ function parseArgs(argv) {
     record: null,
     extras: true,
     help: false,
+    version: false,
   };
 
   for (let i = 0; i < argv.length; i += 1) {
@@ -64,6 +67,7 @@ function parseArgs(argv) {
     const next = () => argv[i + 1];
 
     if (arg === '--help' || arg === '-h') opts.help = true;
+    else if (arg === '--version' || arg === '-v') opts.version = true;
     else if (arg === '--unlimited') opts.unlimited = true;
     else if (arg === '--no-double') opts.double = false;
     else if (arg === '--double') opts.double = true;
@@ -129,6 +133,7 @@ Git 提交与巨无霸热量对冲器 · 业务执行引擎
   --json [file]         输出机器可读 JSON（- 表示 stdout）
   --no-extras           只输出账单主体，不带补充说明
   -h, --help            显示帮助
+  -v, --version         显示版本
 
 示例
   node index.js --demo l3
@@ -235,6 +240,11 @@ async function main() {
 
   if (opts.help) {
     printHelp();
+    return;
+  }
+
+  if (opts.version) {
+    console.log(`${pkg.name} v${pkg.version}`);
     return;
   }
 
